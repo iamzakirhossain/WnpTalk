@@ -1,0 +1,1675 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WnpTalk.MainPage">
+
+
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="File"/>
+        <MenuBarItem Text="Edit"/>
+        <MenuBarItem Text="Window"/>
+        <MenuBarItem Text="Help"/>
+
+
+    </ContentPage.MenuBarItems>
+
+
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55"/>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Background-->
+        <Border Background="#f8f7fc" Grid.Column="2" Grid.ColumnSpan="2" Margin="-25, 0, 0, 0" Grid.RowSpan="2">
+
+        </Border>
+        <!--Left Menu 1-->
+        <Border Grid.RowSpan="2" ZIndex="2"  Background="#512BD4">
+            <Grid>
+                <!--App Title-->
+                <!--<Label Text="WnpTalk" Background="#512BD4" FontSize="16" VerticalTextAlignment="Start" 
+                       HorizontalTextAlignment="Center" Margin="0, 30, 0, 0" WidthRequest="40" TextColor="#ffffff" FontAttributes="Bold">
+                    
+                    
+                </Label>-->
+
+                <!--Account Buttons-->
+                <StackLayout Margin="0, 170, 0, 0">
+                    <Grid>
+                        <Border HorizontalOptions="Start" WidthRequest="2.5" Background="#ffffff" Margin="0, -10"/>
+                        <Border WidthRequest="25" HeightRequest="25">
+                            <Border.Background>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="#ffffff" Offset="0"/>
+                                    <GradientStop Color="#ffffff" Offset="0.8"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+
+                            <Label Text="W" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Margin="0, 0, 0, 2"/>
+                        </Border>
+                    </Grid>
+                    <Grid Margin="0,10">
+                        <Border HorizontalOptions="Start" WidthRequest="2.5" Background="#ffffff" Margin="0, -10"/>
+                        <Border WidthRequest="25" HeightRequest="25">
+                            <Border.Background>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="#ffffff" Offset="0"/>
+                                    <GradientStop Color="#ffffff" Offset="0.8"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+
+                            <Label Text="N" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Margin="0, 0, 0, 2"/>
+                        </Border>
+                    </Grid>
+                    <Grid>
+                        <Border HorizontalOptions="Start" WidthRequest="2.5" Background="#ffffff" Margin="0, -10"/>
+                        <Border WidthRequest="25" HeightRequest="25">
+                            <Border.Background>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="#ffffff" Offset="0"/>
+                                    <GradientStop Color="#ffffff" Offset="0.8"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+
+                            <Label Text="P" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Margin="0, 0, 0, 2"/>
+                        </Border>
+                    </Grid>
+
+                    <!--Add Button-->
+
+
+                </StackLayout>
+
+            </Grid>
+        </Border>
+
+        <!--Left Menu 2-->
+        <Border Grid.Column="1" Grid.RowSpan="2" Background="#512BD4" ZIndex="1" Margin="-25,0,0,0">
+
+            <Grid HorizontalOptions="Center" Margin="5,10,0,0">
+
+                <!--Menu Buttons-->
+                <StackLayout  HorizontalOptions="Center" Margin="10,10,0,0">
+
+                    <Grid Margin="0, -30,0,0" >
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                                    Source="comment2.png"
+                                    BackgroundColor="Transparent" 
+                                   HorizontalOptions="Start" 
+                                   HeightRequest="14" 
+                                   WidthRequest="14" Margin="0,0,0,0"/>
+
+                            <Button  x:Name="threadButton" Text="Threads" Margin="-5,0,0,0" FontSize="14" BorderColor="Transparent" FontAttributes="None" Background="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -55,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="at.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="14" 
+                   WidthRequest="14" Margin="0,0,0,0"/>
+                            <Button Text="Mentions &amp; Reactions" Margin="-5,0,0,0" BorderColor="Transparent" FontSize="14" FontAttributes="None" Background="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -55,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="send3.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="14" 
+                   WidthRequest="14" Margin="0,0,0,0"/>
+
+                            <Button Text="Drafts &amp; Sents" Margin="-5,0,0,0" BorderColor="Transparent" FontSize="14" FontAttributes="None" Background="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -55,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="files.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="14" 
+                   WidthRequest="14" Margin="0,0,0,0"/>
+
+
+                            <Button Text="Files" Margin="-5,0,0,0" FontSize="14" FontAttributes="None" BorderColor="Transparent" Background="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+
+                        </StackLayout>
+
+
+                    </Grid>
+                    <StackLayout Grid.Column="0" Margin="0,-40,0,0" Background="#88878e" HeightRequest="0.8" WidthRequest="200"/>
+
+                    <Grid Margin="0, -15,0,0">
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                                    Source="down_arrow.png"
+                                    BackgroundColor="Transparent" 
+                                   HorizontalOptions="Start" 
+                                   HeightRequest="14" 
+                                   WidthRequest="14" Margin="0,0,0,0"/>
+
+                            <Button Text="Channels" Margin="-5,0,0,0" FontSize="14" FontAttributes="Bold" Background="Transparent" BorderColor="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -30,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="hash.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="14" 
+                   WidthRequest="14" Margin="0,0,0,0"/>
+
+                            <Button Text=".NET" Margin="-5,0,0,0" FontSize="14" FontAttributes="None" BorderColor="Transparent" Background="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -55,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="hash.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="14" 
+                   WidthRequest="14" Margin="0,0,0,0"/>
+                            <Button Text="MAUI" Margin="-5,0,0,0" FontSize="14" FontAttributes="None" BorderColor="Transparent" Background="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -55,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="hash.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="14" 
+                   WidthRequest="14" Margin="0,0,0,0"/>
+
+
+                            <Button Text="Blazor" Margin="-5,0,0,0" FontSize="14" FontAttributes="None" BorderColor="Transparent" Background="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -55,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                             Source="hash.png"
+                             BackgroundColor="Transparent" 
+                            HorizontalOptions="Start" 
+                            HeightRequest="14" 
+                            WidthRequest="14" Margin="0,0,0,0"/>
+                            <Button Text="Xaml" Margin="-5,0,0,0" FontSize="14" FontAttributes="None" BorderColor="Transparent" Background="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -55,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="plus_fill.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="14" 
+                   WidthRequest="14" Margin="0,0,0,0"/>
+
+                            <Button Text="Add Channel" FontSize="14" FontAttributes="None" HeightRequest="16" TextColor="White" Background="Transparent" BackgroundColor="Transparent"/>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <StackLayout Grid.Column="0" Background="#88878e" Margin="0,-40,0,0" HeightRequest="0.8" WidthRequest="200"/>
+
+
+                    <Grid Margin="0, -15,0,0">
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                                    Source="down_arrow.png"
+                                    BackgroundColor="Transparent" 
+                                   HorizontalOptions="Start" 
+                                   HeightRequest="14" 
+                                   WidthRequest="14" Margin="0,0,0,0"/>
+                            <Button Text="Direct Messages" Margin="-5,0,0,0" FontSize="14" FontAttributes="Bold" Background="Transparent" BorderColor="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -30,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="p4.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="14" 
+                   WidthRequest="14" Margin="0,0,0,0"/>
+                            <Button Text="Chris Evans (You)" Margin="-5,0,0,0" FontSize="14" FontAttributes="None" BorderColor="Transparent" Background="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -55,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="p1.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="14" 
+                   WidthRequest="14" Margin="0,0,0,0"/>
+                            <Button Text="John Doe" Margin="-5,0,0,0" FontSize="14" FontAttributes="None" BorderColor="Transparent" Background="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -55,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="p2.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="14" 
+                   WidthRequest="14" Margin="0,0,0,0"/>
+                            <Button Text="Mr. Clark" Margin="-5,0,0,0" FontSize="14" FontAttributes="None" BorderColor="Transparent" Background="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -55,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                             Source="p3.png"
+                             BackgroundColor="Transparent" 
+                            HorizontalOptions="Start" 
+                            HeightRequest="14" 
+                            WidthRequest="14" Margin="0,0,0,0"/>
+                            <Button Text="Peter Parker" Margin="-5,0,0,0" FontSize="14" FontAttributes="None" BorderColor="Transparent" Background="Transparent" BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0, -55,0,0">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="85" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="plus_fill.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="14" 
+                   WidthRequest="14" Margin="0,0,0,0"/>
+
+                            <Button Text="Add Coworkers" FontSize="14" FontAttributes="None" HeightRequest="16" TextColor="White" Background="Transparent" BackgroundColor="Transparent"/>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <StackLayout Grid.Column="0" Background="#88878e" Margin="0,-40,0,0" HeightRequest="0.8" WidthRequest="200"/>
+
+
+                    <Grid Margin="0,-40" VerticalOptions="EndAndExpand">
+                        <Grid HorizontalOptions="End" WidthRequest="20" HeightRequest="30" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="setting.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="16" 
+                   WidthRequest="16" Margin="0,0,0,0"/>
+
+
+                            <Button Text="Settings" Margin="-5,0,0,0" FontSize="16" FontAttributes="None" BorderColor="Transparent" Background="Transparent" 
+                                    BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Margin="0,30">
+                        <Grid HorizontalOptions="End" WidthRequest="20"  HeightRequest="10" ZIndex="1" IsVisible="True">
+
+
+                        </Grid>
+
+                        <StackLayout Orientation="Horizontal" VerticalOptions="End">
+
+                            <Image Grid.ColumnSpan="1"
+                    Source="logout.png"
+                    BackgroundColor="Transparent" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="14" 
+                   WidthRequest="14" Margin="0,0,0,0"/>
+
+                            <Button Text="Logout" Margin="-5,0,0,0" FontSize="14" FontAttributes="None" BorderColor="Transparent" Background="Transparent" 
+        BackgroundColor="Transparent" TextColor="White">
+
+                            </Button>
+                        </StackLayout>
+
+
+                    </Grid>
+
+                </StackLayout>
+
+
+
+            </Grid>
+        </Border>
+
+        <!--Top Section-->
+        <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="-40,0,0,0">
+            <!--Search Textbox-->
+            <Grid WidthRequest="400" HorizontalOptions="Center">
+                <!--<Entry Placeholder="Search here..."  WidthRequest="320" Margin="0,10,0,0" VerticalOptions="Center" PlaceholderColor="#868686" ZIndex="1"/>
+                <Button Text="Search" WidthRequest="80" HeightRequest="36" Margin="400,12,0,0" FontAttributes="Bold"/>-->
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" ZIndex="5" Margin="0, 5">
+
+                    <Border 
+        Margin="10, 3, 0, 0"
+        WidthRequest="500"
+        HeightRequest="40"
+        Stroke="#4263f5"
+        StrokeThickness="1"
+        BackgroundColor="White"
+        StrokeShape="RoundRectangle 10">
+
+                        <Border.Shadow>
+                            <Shadow Brush="#4263f5"
+                Offset="0,0"
+                Opacity="0"/>
+                        </Border.Shadow>
+
+                        <Entry Placeholder="Search here..."
+                       Grid.Row="1"
+                       Text="{Binding Text}"
+                           TextColor="Black"
+                              WidthRequest="500" 
+                            Background="Transparent"
+                            BackgroundColor="Transparent"
+                              
+                       />
+
+
+
+                    </Border>
+
+
+
+                    <Image
+                    Source="search_icon.png"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    Margin="5,2,0,0"
+                    />
+
+
+
+                </StackLayout>
+
+            </Grid>
+
+            <!--Top Menu-->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+
+                <Border 
+                    Margin="0,0,15,0"
+                    WidthRequest="28"
+                            HeightRequest="28"
+                            Stroke="#512BD4"
+                            StrokeThickness="1"
+                            BackgroundColor="Transparent"
+                            StrokeShape="RoundRectangle 50">
+
+                    <Border.Shadow>
+                        <Shadow Brush="#512BD4"
+                                    Offset="0,0"
+                                    Opacity="0"/>
+                    </Border.Shadow>
+
+                    <Image
+                            Source="bell2.png"
+                            HeightRequest="20"
+                            WidthRequest="20"
+                            />
+
+                </Border>
+
+                <Border 
+                    Margin="0,0,15,0"
+                    WidthRequest="28"
+                            HeightRequest="28"
+                            Stroke="#512BD4"
+                            StrokeThickness="1"
+                            BackgroundColor="Transparent"
+                            StrokeShape="RoundRectangle 50">
+
+                    <Border.Shadow>
+                        <Shadow Brush="#512BD4"
+                                    Offset="0,0"
+                                    Opacity="0"/>
+                    </Border.Shadow>
+
+                    <Image
+                            Source="p4.png"
+                            HeightRequest="28"
+                            WidthRequest="28"
+                            />
+
+                </Border>
+
+
+                <Image Grid.ColumnSpan="2"
+                       Source="dots.png"
+                       BackgroundColor="Transparent" WidthRequest="28" HeightRequest="28" Margin="0,0,15,0"/>
+
+            </StackLayout>
+        </Grid>
+
+
+        <!--Chat Items Section-->
+        <Border Grid.Column="2" Grid.Row="1">
+            <Grid>
+                <!--Separator-->
+                <StackLayout Orientation="Horizontal" Margin="30, 0, 0, 30">
+
+                </StackLayout>
+
+                <StackLayout Margin="0, 10, 15, 20">
+                    <Grid Grid.Column="2">
+                        <Label Text="Chat Rooms"  Margin="25, 0, 0, 5" TextColor="#23232e" FontSize="18" FontAttributes="Bold"/>
+
+                    </Grid>
+
+
+
+                    <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="40,7">
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+
+                            <Border WidthRequest="30"
+                            HeightRequest="30"
+                            Stroke="#512BD4"
+                            StrokeThickness="1"
+                            BackgroundColor="#512BD4"
+                            StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#512BD4"
+                                    Offset="0,0"
+                                    Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Image
+Source="r1.png"
+HeightRequest="30"
+WidthRequest="30"
+/>
+
+                            </Border>
+
+                            <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="10,0,10,0" WidthRequest="180">
+                                <Label Text=".NET Room" TextColor="Black" FontSize="16" FontAttributes="None" Margin="6, 3, 0, 0"/>
+                                <Label Text="Is anyone there. I am new here.." TextColor="#868686" FontSize="12" FontAttributes="None" Margin="6, 25, 0, 0"/>
+                            </Grid>
+
+
+                            <Border 
+                                    Margin="10, 3, 0, 0"
+                                    WidthRequest="20"
+                                    HeightRequest="20"
+                                    Stroke="#4263f5"
+                                    StrokeThickness="1"
+                                    BackgroundColor="#4263f5"
+                                    StrokeShape="RoundRectangle 50"
+                                    HorizontalOptions="End"
+                           
+                                >
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#4263f5"
+                                            Offset="0,0"
+                                            Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Label
+                                    Text="2"
+                                    SemanticProperties.HeadingLevel="Level1"
+                                    FontSize="12"
+                                    HorizontalOptions="Center"
+                                     FontAttributes="Bold"
+ TextColor="White"
+                                    />
+
+                            </Border>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="40,7">
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+
+                            <Border WidthRequest="30"
+                                HeightRequest="30"
+                                Stroke="#512BD4"
+                                StrokeThickness="1"
+                                BackgroundColor="#512BD4"
+                                StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#512BD4"
+                                        Offset="0,0"
+                                        Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Image
+Source="r1.png"
+HeightRequest="30"
+WidthRequest="30"
+/>
+
+                            </Border>
+
+                            <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="10,0,10,0" WidthRequest="180">
+                                <Label Text="MAUI Room" TextColor="Black" FontSize="16" FontAttributes="None" Margin="6, 3, 0, 0"/>
+                                <Label Text="Welcome to this room..." TextColor="#868686" FontSize="12" FontAttributes="None" Margin="6, 25, 0, 0"/>
+                            </Grid>
+
+
+                            <Border 
+                                Margin="10, 3, 0, 0"
+                                WidthRequest="20"
+                                HeightRequest="20"
+                                Stroke="#4263f5"
+                                StrokeThickness="1"
+                                BackgroundColor="#4263f5"
+                                StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#4263f5"
+                                        Offset="0,0"
+                                        Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Label
+                                Text="2"
+                                SemanticProperties.HeadingLevel="Level1"
+                                FontSize="12"
+                                HorizontalOptions="Center"
+                                                     FontAttributes="Bold"
+ TextColor="White"
+                                />
+
+                            </Border>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="40,7">
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+
+                            <Border WidthRequest="30"
+             HeightRequest="30"
+             Stroke="#512BD4"
+             StrokeThickness="1"
+             BackgroundColor="#512BD4"
+             StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#512BD4"
+                     Offset="0,0"
+                     Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Image
+Source="r1.png"
+HeightRequest="30"
+WidthRequest="30"
+/>
+
+
+                            </Border>
+
+                            <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="10,0,10,0" WidthRequest="180">
+                                <Label Text="XAML Room" TextColor="Black" FontSize="16" FontAttributes="None" Margin="6, 3, 0, 0"/>
+                                <Label Text="Is everything ok? Please tell me if..." TextColor="#868686" FontSize="12" FontAttributes="None" Margin="6, 25, 0, 0"/>
+                            </Grid>
+
+
+                            <Border 
+             Margin="10, 3, 0, 0"
+             WidthRequest="20"
+             HeightRequest="20"
+             Stroke="#4263f5"
+             StrokeThickness="1"
+             BackgroundColor="#4263f5"
+             StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#4263f5"
+                     Offset="0,0"
+                     Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Label
+             Text="2"
+             SemanticProperties.HeadingLevel="Level1"
+             FontSize="12"
+                                    
+             HorizontalOptions="Center"
+                                    FontAttributes="Bold"
+                                     TextColor="White"
+             />
+
+                            </Border>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="40,7">
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+
+                            <Border WidthRequest="30"
+             HeightRequest="30"
+             Stroke="#512BD4"
+             StrokeThickness="1"
+             BackgroundColor="#512BD4"
+             StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#512BD4"
+                     Offset="0,0"
+                     Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Image
+Source="r1.png"
+HeightRequest="30"
+WidthRequest="30"
+/>
+
+
+                            </Border>
+
+                            <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="10,0,10,0" WidthRequest="180">
+                                <Label Text="Blazor Room" TextColor="Black" FontSize="16" FontAttributes="None" Margin="6, 3, 0, 0"/>
+                                <Label Text="Please do this work..." TextColor="#868686" FontSize="12" FontAttributes="None" Margin="6, 25, 0, 0"/>
+                            </Grid>
+
+
+                            <Border 
+             Margin="10, 3, 0, 0"
+             WidthRequest="20"
+             HeightRequest="20"
+             Stroke="#4263f5"
+             StrokeThickness="1"
+             BackgroundColor="#4263f5"
+             StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#4263f5"
+                     Offset="0,0"
+                     Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Label
+             Text="2"
+             SemanticProperties.HeadingLevel="Level1"
+             FontSize="12"
+             HorizontalOptions="Center"
+                                    FontAttributes="Bold"
+ TextColor="White"
+             />
+
+                            </Border>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+
+                    <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="40,7">
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Button Text="Show All"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Background="Transparent"
+                                    BorderColor="Transparent"
+                                    TextColor="#512BD4"
+                                    FontAttributes="None"
+                                    FontSize="13"/>
+                        </StackLayout>
+                    </Grid>
+
+                    <Label Text="Persons"  Margin="25, 10, 0, 5" TextColor="#23232e" FontSize="18" FontAttributes="Bold"/>
+
+                    <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="40,7">
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+
+                            <Border WidthRequest="30"
+                            HeightRequest="30"
+                            Stroke="Transparent"
+                            StrokeThickness="1"
+                            BackgroundColor="Transparent"
+                            StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#512BD4"
+                                    Offset="0,0"
+                                    Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Image
+                            Source="p1.png"
+                            HeightRequest="30"
+                            WidthRequest="30"
+                            />
+
+                            </Border>
+
+                            <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="10,0,10,0" WidthRequest="180">
+                                <Label Text="John Doe" TextColor="Black" FontSize="16" FontAttributes="None" Margin="6, 3, 0, 0"/>
+                                <Label Text="I'm fine. How are you?..." TextColor="#868686" FontSize="12" FontAttributes="None" Margin="6, 25, 0, 0"/>
+                            </Grid>
+
+
+                            <Border 
+                                    Margin="10, 3, 0, 0"
+                                    WidthRequest="20"
+                                    HeightRequest="20"
+                                    Stroke="#4263f5"
+                                    StrokeThickness="1"
+                                    BackgroundColor="#4263f5"
+                                    StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#4263f5"
+                                            Offset="0,0"
+                                            Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Label
+                                    Text="2"
+                                    SemanticProperties.HeadingLevel="Level1"
+                                    FontSize="12"
+                                    HorizontalOptions="Center"
+                                    FontAttributes="Bold"
+ TextColor="White"
+                                    />
+
+                            </Border>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="40,7">
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+
+                            <Border WidthRequest="30"
+                                HeightRequest="30"
+                                Stroke="#512BD4"
+                                StrokeThickness="1"
+                                BackgroundColor="#512BD4"
+                                StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#512BD4"
+                                        Offset="0,0"
+                                        Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Image
+                                Source="p2.png"
+                                HeightRequest="30"
+                                WidthRequest="30"
+                                />
+
+                            </Border>
+
+                            <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="10,0,10,0" WidthRequest="180">
+                                <Label Text="Mr. Clark" TextColor="Black" FontSize="16" FontAttributes="None" Margin="6, 3, 0, 0"/>
+                                <Label Text=".NET 8 coming soon..." TextColor="#868686" FontSize="12" FontAttributes="None" Margin="6, 25, 0, 0"/>
+                            </Grid>
+
+
+                            <Border 
+                                Margin="10, 3, 0, 0"
+                                WidthRequest="20"
+                                HeightRequest="20"
+                                Stroke="#4263f5"
+                                StrokeThickness="1"
+                                BackgroundColor="#4263f5"
+                                StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#4263f5"
+                                        Offset="0,0"
+                                        Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Label
+                                Text="2"
+                                SemanticProperties.HeadingLevel="Level1"
+                                FontSize="12"
+                                HorizontalOptions="Center"
+                                    FontAttributes="Bold"
+ TextColor="White"
+                                />
+
+                            </Border>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="40,7">
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+
+                            <Border WidthRequest="30"
+             HeightRequest="30"
+             Stroke="#512BD4"
+             StrokeThickness="1"
+             BackgroundColor="#512BD4"
+             StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#512BD4"
+                     Offset="0,0"
+                     Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Image
+             Source="p3.png"
+             HeightRequest="30"
+             WidthRequest="30"
+             />
+
+                            </Border>
+
+                            <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="10,0,10,0" WidthRequest="180">
+                                <Label Text="Peter Parker" TextColor="Black" FontSize="16" FontAttributes="None" Margin="6, 3, 0, 0"/>
+                                <Label Text="I am very excited for MAUI..." TextColor="#868686" FontSize="12" FontAttributes="None" Margin="6, 25, 0, 0"/>
+                            </Grid>
+
+
+                            <Border 
+             Margin="10, 3, 0, 0"
+             WidthRequest="20"
+             HeightRequest="20"
+             Stroke="#4263f5"
+             StrokeThickness="1"
+             BackgroundColor="#4263f5"
+             StrokeShape="RoundRectangle 50">
+
+                                <Border.Shadow>
+                                    <Shadow Brush="#4263f5"
+                     Offset="0,0"
+                     Opacity="0"/>
+                                </Border.Shadow>
+
+                                <Label
+             Text="2"
+             SemanticProperties.HeadingLevel="Level1"
+             FontSize="12"
+             HorizontalOptions="Center"
+                                    FontAttributes="Bold"
+ TextColor="White"
+             />
+
+                            </Border>
+
+                        </StackLayout>
+
+
+                    </Grid>
+
+
+                    <Grid Grid.Column="2" Grid.ColumnSpan="2" Margin="40,7">
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Button Text="Show All"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Background="Transparent"
+                                    BorderColor="Transparent"
+                                    TextColor="#512BD4"
+                                    FontAttributes="None"
+                                    FontSize="13"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+
+            </Grid>
+        </Border>
+
+
+        <!--Chat Section-->
+        <Border Background="#ffffff" Grid.Column="3" Grid.Row="1" Margin="0, 0, 30, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <!--Top Chat MenuBar-->
+                <Grid Background="#ffffff">
+                    <Grid.Effects>
+
+                    </Grid.Effects>
+
+
+
+                    <Label Text=".NET Room" FontSize="16" Margin="20, 15" HorizontalOptions="Start"/>
+
+                    <StackLayout Orientation="Horizontal" Margin="0, 0, 10, 0" HorizontalOptions="End">
+
+                        <Border 
+                        Margin="0, 0, -15,0"
+                        WidthRequest="30"
+                      HeightRequest="30"
+                      Stroke="#512BD4"
+                      StrokeThickness="1"
+                      BackgroundColor="#512BD4"
+                      StrokeShape="RoundRectangle 50">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#512BD4"
+                              Offset="0,0"
+                              Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Image
+                      Source="p1.png"
+                      HeightRequest="30"
+                      WidthRequest="30"
+                      />
+
+                        </Border>
+
+                        <Border 
+                        Margin="0, 0, -15,0"
+                        WidthRequest="30"
+                          HeightRequest="30"
+                          Stroke="#512BD4"
+                          StrokeThickness="1"
+                          BackgroundColor="#512BD4"
+                          StrokeShape="RoundRectangle 50">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#512BD4"
+                                  Offset="0,0"
+                                  Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Image
+                          Source="p2.png"
+                          HeightRequest="30"
+                          WidthRequest="30"
+                          />
+
+                        </Border>
+
+                        <Border 
+                    WidthRequest="30"
+                      HeightRequest="30"
+                      Stroke="#512BD4"
+                      StrokeThickness="1"
+                      BackgroundColor="#512BD4"
+                      StrokeShape="RoundRectangle 50">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#512BD4"
+                              Offset="0,0"
+                              Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Image
+                      Source="p3.png"
+                      HeightRequest="30"
+                      WidthRequest="30"
+                      />
+
+                        </Border>
+
+                        <Label Text="and 3 others" VerticalOptions="Center" Margin="7, 16"/>
+                        <Image Grid.ColumnSpan="1"
+                           Source="dots.png"
+                           BackgroundColor="Transparent" WidthRequest="16" HeightRequest="16" Margin="0, 4, 0, 0"/>
+                    </StackLayout>
+                </Grid>
+
+                <!--Chats-->
+                <StackLayout Grid.Row="1" Margin="20, 10, 20, 20">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Column="0" Background="#dadada" HeightRequest="0.8"/>
+                        <Label Grid.Column="1" Margin="13,0" FontSize="11" Text="Yesterday"/>
+                        <StackLayout Grid.Column="2" Background="#dadada" HeightRequest="0.8"/>
+
+                    </Grid>
+
+                    <!--Chat Start-->
+                    <Label Text="John Doe" TextColor="#88878e" HorizontalOptions="Start" FontSize="10" FontAttributes="Bold" Margin="60, 0, 0, 0"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+
+                        <Border WidthRequest="30"
+                            HeightRequest="30"
+                            Stroke="#512BD4"
+                            StrokeThickness="1"
+                            BackgroundColor="#512BD4"
+                            StrokeShape="RoundRectangle 50">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#512BD4"
+                                    Offset="0,0"
+                                    Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Image
+                            Source="p1.png"
+                            HeightRequest="30"
+                            WidthRequest="30"
+                            />
+
+                        </Border>
+
+
+                        <Border 
+                                    Margin="10, 3, 0, 0"
+                                    WidthRequest="400"
+                                    HeightRequest="40"
+                                    Stroke="#4263f5"
+                                    StrokeThickness="1"
+                                    BackgroundColor="#4263f5"
+                                    StrokeShape="RoundRectangle 0 10 10 10">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#4263f5"
+                                            Offset="0,0"
+                                            Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Label
+                                    Padding="10"
+                                    Text="Please share your experience on .NET..."
+                                    SemanticProperties.HeadingLevel="Level1"
+                                    FontSize="14"
+                                    HorizontalOptions="Start"
+                                 TextColor="White"
+                                    />
+
+                        </Border>
+                        <Label Text="4:19 PM" TextColor="#fff" HorizontalOptions="End" FontSize="10" FontAttributes="Bold" Margin="-60, 22, 16, 0"/>
+                    </StackLayout>
+
+
+                    <StackLayout Margin="0,10" Orientation="Horizontal" HorizontalOptions="End">
+
+
+                        <Border 
+             Margin="10, 3, 0, 0"
+             WidthRequest="400"
+             HeightRequest="40"
+             Stroke="#4263f5"
+             StrokeThickness="1"
+             BackgroundColor="#4263f5"
+             StrokeShape="RoundRectangle 10 10 10 0">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#4263f5"
+                     Offset="0,0"
+                     Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Label
+             Padding="10"
+             Text="I am working on .NET since 2017..."
+             SemanticProperties.HeadingLevel="Level1"
+             FontSize="14"
+             HorizontalOptions="Start"
+                                     TextColor="White"
+             />
+
+                        </Border>
+                        <Label Text="4:11 PM" TextColor="#fff" HorizontalOptions="End" FontSize="10" FontAttributes="Bold" Margin="-60, 22, 16, 0"/>
+
+
+
+
+                    </StackLayout>
+
+                    <Label Text="Mr. Clark" TextColor="#88878e" HorizontalOptions="Start" FontSize="10" FontAttributes="Bold" Margin="60, 0, 0, 0"/>
+                    <StackLayout Margin="0,2" Orientation="Horizontal" HorizontalOptions="Start">
+
+
+                        <Border WidthRequest="30"
+                                        HeightRequest="30"
+                                        Stroke="#512BD4"
+                                        StrokeThickness="1"
+                                        BackgroundColor="#512BD4"
+                                        StrokeShape="RoundRectangle 50">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#512BD4"
+                                                Offset="0,0"
+                                                Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Image
+                                        Source="p2.png"
+                                        HeightRequest="30"
+                                        WidthRequest="30"
+                                        />
+
+                        </Border>
+
+                        <Border 
+                Margin="10, 3, 0, 0"
+                WidthRequest="400"
+                HeightRequest="40"
+                Stroke="#4263f5"
+                StrokeThickness="1"
+                BackgroundColor="#4263f5"
+                StrokeShape="RoundRectangle 0 10 10 10">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#4263f5"
+                        Offset="0,0"
+                        Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Label
+                Padding="10"
+                Text="I have 15 years of experience on .NET..."
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="14"
+                HorizontalOptions="Start"
+                                 TextColor="White"
+                />
+
+                        </Border>
+                        <Label Text="4:13 PM" TextColor="#fff" 
+                                   HorizontalOptions="Start" FontSize="10" 
+                                   FontAttributes="Bold" 
+                                   Margin="-60, 22, 16, 0"/>
+
+                    </StackLayout>
+
+
+                    <StackLayout Margin="0,2" Orientation="Horizontal" HorizontalOptions="Start">
+
+
+                        <Border WidthRequest="30"
+                                        HeightRequest="30"
+                                        Stroke="Transparent"
+                                        StrokeThickness="1"
+                                        BackgroundColor="Transparent"
+                                        StrokeShape="RoundRectangle 50">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#512BD4"
+                                                Offset="0,0"
+                                                Opacity="0"/>
+                            </Border.Shadow>
+
+
+                        </Border>
+
+                        <Border 
+                Margin="10, 3, 0, 0"
+                WidthRequest="400"
+                HeightRequest="40"
+                Stroke="#4263f5"
+                StrokeThickness="1"
+                BackgroundColor="#4263f5"
+                StrokeShape="RoundRectangle 0 10 10 10">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#4263f5"
+                        Offset="0,0"
+                        Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Label
+                Padding="10"
+                Text="Also I am open source contributor..."
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="14"
+                HorizontalOptions="Start"
+                                 TextColor="White"
+                />
+
+                        </Border>
+                        <Label Text="4:13 PM" TextColor="#fff" 
+                                   HorizontalOptions="Start" FontSize="10" 
+                                   FontAttributes="Bold" 
+                                   Margin="-60, 22, 16, 0"/>
+
+                    </StackLayout>
+
+                    <StackLayout Margin="0,10" Orientation="Horizontal" HorizontalOptions="End">
+
+                        <Border 
+                  Margin="10, 3, 0, 0"
+                  WidthRequest="400"
+                  HeightRequest="40"
+                  Stroke="#4263f5"
+                  StrokeThickness="1"
+                  BackgroundColor="#4263f5"
+                  StrokeShape="RoundRectangle 10 10 10 0">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#4263f5"
+                          Offset="0,0"
+                          Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Label
+                  Padding="10"
+                  Text="Awesome ..."
+                  SemanticProperties.HeadingLevel="Level1"
+                  FontSize="14"
+                  HorizontalOptions="Start"
+                                 TextColor="White"
+                  />
+
+                        </Border>
+                        <Label Text="4:15 PM" TextColor="#fff" 
+                        HorizontalOptions="Start" FontSize="10" 
+                        FontAttributes="Bold" 
+                        Margin="-60, 22, 16, 0"/>
+                    </StackLayout>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Column="0" Background="#dadada" HeightRequest="0.8"/>
+                        <Label Grid.Column="1" Margin="13,0" FontSize="11" Text="Today"/>
+                        <StackLayout Grid.Column="2" Background="#dadada" HeightRequest="0.8"/>
+
+                    </Grid>
+
+                    <!--Chat Start-->
+                    <Label Text="Peter Parker" TextColor="#88878e" HorizontalOptions="Start" FontSize="10" FontAttributes="Bold" Margin="60, 0, 0, 0"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+
+                        <Border WidthRequest="30"
+                     HeightRequest="30"
+                     Stroke="#512BD4"
+                     StrokeThickness="1"
+                     BackgroundColor="#512BD4"
+                     StrokeShape="RoundRectangle 50">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#512BD4"
+                             Offset="0,0"
+                             Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Image
+                     Source="p3.png"
+                     HeightRequest="30"
+                     WidthRequest="30"
+                     />
+
+                        </Border>
+
+
+                        <Border 
+                             Margin="10, 3, 0, 0"
+                             WidthRequest="400"
+                             HeightRequest="40"
+                             Stroke="#4263f5"
+                             StrokeThickness="1"
+                             BackgroundColor="#4263f5"
+                             StrokeShape="RoundRectangle 0 10 10 10">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#4263f5"
+                                     Offset="0,0"
+                                     Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Label
+                             Padding="10"
+                             Text="Can you work with me?"
+                             SemanticProperties.HeadingLevel="Level1"
+                             FontSize="14"
+                             HorizontalOptions="Start"
+                             TextColor="White"
+                             />
+
+                        </Border>
+                        <Label Text="4:17 PM" TextColor="#fff" HorizontalOptions="End" FontSize="10" FontAttributes="Bold" Margin="-60, 22, 16, 0"/>
+                    </StackLayout>
+
+
+                    <StackLayout Margin="0,10" Orientation="Horizontal" HorizontalOptions="End">
+
+
+                        <Border 
+      Margin="10, 3, 0, 0"
+      WidthRequest="400"
+      HeightRequest="40"
+      Stroke="#4263f5"
+      StrokeThickness="1"
+      BackgroundColor="#4263f5"
+      StrokeShape="RoundRectangle 10 10 10 0">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#4263f5"
+              Offset="0,0"
+              Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Label
+      Padding="10"
+      Text="Of course. I will be very happy to work with you."
+      SemanticProperties.HeadingLevel="Level1"
+      FontSize="14"
+      HorizontalOptions="Start"
+                  TextColor="White"
+      />
+
+                        </Border>
+                        <Label Text="4:18 PM" TextColor="#fff" HorizontalOptions="End" FontSize="10" FontAttributes="Bold" Margin="-60, 22, 16, 0"/>
+
+
+
+
+                    </StackLayout>
+
+                    <!--Chat End-->
+
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand" ZIndex="5">
+
+                        <Border 
+Margin="0,5,0,0"
+WidthRequest="30"
+HeightRequest="30"
+Stroke="#512BD4"
+StrokeThickness="1"
+BackgroundColor="Transparent"
+StrokeShape="RoundRectangle 50">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#512BD4"
+        Offset="0,0"
+        Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Image
+Source="plus.png"
+HeightRequest="20"
+WidthRequest="20"
+/>
+
+                        </Border>
+
+
+                        <Border 
+        Margin="10, 3, 0, 0"
+        WidthRequest="500"
+        HeightRequest="50"
+        Stroke="#512BD4"
+        StrokeThickness="1"
+        BackgroundColor="White"
+        StrokeShape="RoundRectangle 20">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#4263f5"
+                Offset="0,0"
+                Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Entry Placeholder="Type a message..."
+                       Grid.Row="1"
+                       Text="{Binding Text}"
+                           TextColor="Black"
+                              WidthRequest="500" 
+                            Background="Transparent"
+                            BackgroundColor="Transparent"
+                              
+                       />
+
+
+
+                        </Border>
+
+
+
+                        <Border 
+                    Margin="5, 6, 16, 0"
+                    WidthRequest="35"
+                    HeightRequest="35"
+                    Stroke="Transparent"
+                    StrokeThickness="1"
+                    BackgroundColor="Transparent"
+                    StrokeShape="RoundRectangle 50">
+
+                            <Border.Shadow>
+                                <Shadow Brush="#512BD4"
+                            Offset="0,0"
+                            Opacity="0"/>
+                            </Border.Shadow>
+
+                            <Image
+                    Source="send2.png"
+                    HeightRequest="35"
+                    WidthRequest="35"
+                    />
+
+                        </Border>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+
+
+
+
+            </Grid>
+        </Border>
+
+
+    </Grid>
+
+</ContentPage>
